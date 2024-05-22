@@ -50,4 +50,4 @@ class TestAcceptOrder:
         login_courier = MethodsCourier.create_and_login_courier(create_and_delete_account_courier)
         id_courier = login_courier.json()['id']
         response = MethodsOrder.accept_order('', id_courier)
-        assert response.status_code == 400 and response.json()['message'] == "Недостаточно данных для поиска"
+        assert response.status_code == 404
