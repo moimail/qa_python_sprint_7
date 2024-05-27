@@ -3,7 +3,7 @@ from helper import DataGenerationOrder
 from scooter_api import MethodsOrder
 
 
-@allure.title("Ручка /api/v1/orders/track")
+@allure.suite("Ручка /api/v1/orders/track")
 class TestGetOrder:
     @allure.description("Успешное получение заказа по его номеру. Получаем код 200 и данные с заказом")
     def test_get_order_of_his_number_success(self):

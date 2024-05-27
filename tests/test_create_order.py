@@ -4,7 +4,7 @@ from helper import DataGenerationOrder
 from scooter_api import MethodsOrder
 
 
-@allure.title("Ручка /api/v1/orders")
+@allure.suite("Ручка /api/v1/orders")
 class TestOrders:
     @pytest.mark.parametrize('color', [['BLACK'], ['GREY'], ['BLACK', 'GREY'], []])
     @allure.description('Проверка, что можно создать заказ с указанием любого цвета')

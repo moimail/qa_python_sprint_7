@@ -3,7 +3,7 @@ from helper import GenerateRandomCourier
 from scooter_api import MethodsCourier
 
 
-@allure.title("Ручка /api/v1/orders")
+@allure.suite("Ручка /api/v1/orders")
 class TestDeleteCourier:
     @allure.description("Успешное уделение курьера. Получаем код 200 и сообщение 'ок':true")
     def test_delete_courier_success(self):
