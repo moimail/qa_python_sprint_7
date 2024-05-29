@@ -6,7 +6,8 @@ from scooter_api import MethodsCourier
 
 @allure.suite("Ручка /api/v1/courier/login")
 class TestLoginCourier:
-    @allure.description("Проверка успешного логина курьера. Получаем статус 200 и id курьера")
+    @allure.title("Проверка успешного логина курьера.")
+    @allure.description("Получаем статус 200 и id курьера")
     def test_login_courier_success(self, create_and_delete_account_courier):
         login_courier = MethodsCourier.create_and_login_courier(create_and_delete_account_courier)
         assert login_courier.status_code == 200 and login_courier.json()['id'] != 0
@@ -20,7 +21,8 @@ class TestLoginCourier:
         response = MethodsCourier.create_and_login_courier(payload)
         assert response.status_code == 400 and response.json()['message'] == 'Недостаточно данных для входа'
 
-    @allure.description('Проверка невозможности залогиниться с несуществующим аккаунтом. Получаем ошибку 404')
+    @allure.title("Проверка невозможности залогиниться с несуществующим аккаунтом.")
+    @allure.description('Получаем ошибку 404')
     def test_no_such_login(self):
         user_data = GenerateRandomCourier.generate_random_courier_data()
         response = MethodsCourier.login_courier(user_data)
